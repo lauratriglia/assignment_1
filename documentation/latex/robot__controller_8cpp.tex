@@ -1,0 +1,98 @@
+\hypertarget{robot__controller_8cpp}{}\section{robot/src/robot\+\_\+controller.cpp File Reference}
+\label{robot__controller_8cpp}\index{robot/src/robot\+\_\+controller.\+cpp@{robot/src/robot\+\_\+controller.\+cpp}}
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Twist.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}nav\+\_\+msgs/\+Odometry.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}my\+\_\+srv/\+Server1.\+h\char`\"{}}\\*
+Include dependency graph for robot\+\_\+controller.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{robot__controller_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{robot__controller_8cpp_aab6e381bffc34921244a29ec0538ba64}{position\+Callback} (const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&msg)
+\item 
+int \hyperlink{robot__controller_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Publisher \hyperlink{robot__controller_8cpp_a350594df3e8f6948c8462edfd41ce086}{pub}
+\item 
+ros\+::\+Service\+Client \hyperlink{robot__controller_8cpp_a17bcd065930a8a7f9f194078d9977268}{client}
+\item 
+my\+\_\+srv\+::\+Server1 \hyperlink{robot__controller_8cpp_a0f620f841aa4b0c612aedc7f0ecb2887}{rec\+\_\+pos}
+\item 
+float \hyperlink{robot__controller_8cpp_a2b38da70bc534912b1a64a4ef9d4685d}{x\+\_\+target} = 0
+\item 
+float \hyperlink{robot__controller_8cpp_a046bc8e8769567b4762db66344df6070}{y\+\_\+target} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}!main@{main}}
+\index{main@{main}!robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\hypertarget{robot__controller_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{robot__controller_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+Definition at line 48 of file robot\+\_\+controller.\+cpp.
+
+\index{robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}!position\+Callback@{position\+Callback}}
+\index{position\+Callback@{position\+Callback}!robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}}
+\subsubsection[{\texorpdfstring{position\+Callback(const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&msg)}{positionCallback(const nav_msgs::Odometry::ConstPtr &msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void position\+Callback (
+\begin{DoxyParamCaption}
+\item[{const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{robot__controller_8cpp_aab6e381bffc34921244a29ec0538ba64}{}\label{robot__controller_8cpp_aab6e381bffc34921244a29ec0538ba64}
+
+
+Definition at line 20 of file robot\+\_\+controller.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\index{robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}!client@{client}}
+\index{client@{client}!robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}}
+\subsubsection[{\texorpdfstring{client}{client}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Service\+Client client}\hypertarget{robot__controller_8cpp_a17bcd065930a8a7f9f194078d9977268}{}\label{robot__controller_8cpp_a17bcd065930a8a7f9f194078d9977268}
+
+
+Definition at line 8 of file robot\+\_\+controller.\+cpp.
+
+\index{robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}!pub@{pub}}
+\index{pub@{pub}!robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}}
+\subsubsection[{\texorpdfstring{pub}{pub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Publisher pub}\hypertarget{robot__controller_8cpp_a350594df3e8f6948c8462edfd41ce086}{}\label{robot__controller_8cpp_a350594df3e8f6948c8462edfd41ce086}
+
+
+Definition at line 7 of file robot\+\_\+controller.\+cpp.
+
+\index{robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}!rec\+\_\+pos@{rec\+\_\+pos}}
+\index{rec\+\_\+pos@{rec\+\_\+pos}!robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}}
+\subsubsection[{\texorpdfstring{rec\+\_\+pos}{rec_pos}}]{\setlength{\rightskip}{0pt plus 5cm}my\+\_\+srv\+::\+Server1 rec\+\_\+pos}\hypertarget{robot__controller_8cpp_a0f620f841aa4b0c612aedc7f0ecb2887}{}\label{robot__controller_8cpp_a0f620f841aa4b0c612aedc7f0ecb2887}
+
+
+Definition at line 11 of file robot\+\_\+controller.\+cpp.
+
+\index{robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}!x\+\_\+target@{x\+\_\+target}}
+\index{x\+\_\+target@{x\+\_\+target}!robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}}
+\subsubsection[{\texorpdfstring{x\+\_\+target}{x_target}}]{\setlength{\rightskip}{0pt plus 5cm}float x\+\_\+target = 0}\hypertarget{robot__controller_8cpp_a2b38da70bc534912b1a64a4ef9d4685d}{}\label{robot__controller_8cpp_a2b38da70bc534912b1a64a4ef9d4685d}
+
+
+Definition at line 14 of file robot\+\_\+controller.\+cpp.
+
+\index{robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}!y\+\_\+target@{y\+\_\+target}}
+\index{y\+\_\+target@{y\+\_\+target}!robot\+\_\+controller.\+cpp@{robot\+\_\+controller.\+cpp}}
+\subsubsection[{\texorpdfstring{y\+\_\+target}{y_target}}]{\setlength{\rightskip}{0pt plus 5cm}float y\+\_\+target = 0}\hypertarget{robot__controller_8cpp_a046bc8e8769567b4762db66344df6070}{}\label{robot__controller_8cpp_a046bc8e8769567b4762db66344df6070}
+
+
+Definition at line 15 of file robot\+\_\+controller.\+cpp.
+

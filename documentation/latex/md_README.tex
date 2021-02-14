@@ -1,0 +1,46 @@
+In this repository you will find all the package required for the construction of a 2D robot whose goal is to achieve a target. Let me explain all the directory which are in this repository
+
+\subsubsection*{my\+\_\+srv}
+
+In this package you will find
+\begin{DoxyItemize}
+\item A subfolder /srv cointains Server1.\+srv -\/$>$ it contains all the paramaters that the Server1 required and the parameters that are returned.
+\item A subfolder /src contains \hyperlink{random__server_8cpp}{random\+\_\+server.\+cpp} -\/$>$ the scope of this code is to provide a random position in a specific interval \mbox{[}-\/6.\+6\mbox{]}. Tha random position is given as input and the code returns it to /robot \+\_\+ controller node
+\end{DoxyItemize}
+
+\subsubsection*{robot}
+
+In this package you will find
+\begin{DoxyItemize}
+\item A subfolder /src contains \hyperlink{robot__controller_8cpp}{robot\+\_\+controller.\+cpp} -\/$>$ it manages the motion of the robot and asks to the server a new target when the previous one is reached
+\end{DoxyItemize}
+
+\subsection*{How the node communicate to each other}
+
+
+
+\subsection*{How to run the code\+:}
+
+
+\begin{DoxyItemize}
+\item As first step it is necessary to run a command to create the master 
+\begin{DoxyCode}
+1 roscore & 
+\end{DoxyCode}
+
+\item As second step run the simulation space with 
+\begin{DoxyCode}
+1 rosrun stage\_ros stageros $(rospack find assignment1)/world/exercise.world
+\end{DoxyCode}
+
+\item As third step in another shell use the command to run the server 
+\begin{DoxyCode}
+1 rosrun my\_srv random\_server
+\end{DoxyCode}
+
+\item As last step, in another shell, use the command to run the robot\+\_\+controller 
+\begin{DoxyCode}
+1 rosrun roboy robot\_controller
+\end{DoxyCode}
+ 
+\end{DoxyItemize}
