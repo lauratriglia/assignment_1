@@ -2,6 +2,9 @@
 #include "geometry_msgs/Twist.h"
 #include "nav_msgs/Odometry.h"
 #include "my_srv/Server1.h"
+#include <cmath>
+#include <sstream>
+#include <iostream>
 
 //Declare the publisher and the client 
 ros::Publisher pub;
@@ -14,6 +17,8 @@ my_srv::Server1 rec_pos;
 float x_target = 0;
 float y_target = 0;
 
+float distance;
+
 //The function positionCallback checks the robot and it asks if the target has been reached. In the case the taget is reached, the function asks for 
 //a new target.
 //If the distance is < 0.1 asks for a new a target, otherwise it sends commands to reach the target 
@@ -23,24 +28,25 @@ void positionCallback(const nav_msgs::Odometry::ConstPtr& msg)
   float y = msg->pose.pose.position.y;
   geometry_msgs::Twist vel;
   ROS_INFO("Robot position [%f, %f]",x,y);
-  x_target =rec_pos.response.x;
-  y_target =rec_pos.response.y;
-  
-  if (((abs(x - x_target) < 0.1) && (abs(y - y_target) < 0.1)))
+  distance = sqrt(pow(x-x_target,2)+pow(y-y_target,2)); 
+  if (distance < 0.1)
   {
 	ROS_INFO("Target Reached");
 	//because the target is reached, we need a new target 
 	my_srv::Server1 new_target;
 	client.call(new_target);
 	x_target = new_target.response.x;
-	x_target = new_target.response.x;
+	y_target = new_target.response.y;
   }
   //in the case the target is not reached
   else{
-	geometry_msgs::Twist vel;
-	vel.linear.x = 100*(x_target-x);
-	vel.linear.y = 100*(y_target-y);
-	pub.publish(vel); 
+	if(x-x_target<0)vel.linear.x=sqrt(pow((x-x_target),2)); 
+	else vel.linear.x=-sqrt(pow((x-x_target),2));		
+		
+	if(y-y_target<0)vel.linear.y=sqrt(pow((y-y_target),2));
+	else vel.linear.y=-sqrt(pow((y-y_target),2));
+		
+        pub.publish(vel);
   }
 
 }

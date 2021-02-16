@@ -4,7 +4,8 @@
 
 
 //The bool pos_random gives us the random targes, with x and y coordinates between -6 and 6
-bool pos_random (my_srv::Server1::Request &req, my_srv::Server1::Response &res){
+bool pos_random (my_srv::Server1::Request &req, my_srv::Server1::Response &res)
+{
 	res.x = (rand()%13)-6;
 	res.y = (rand()%13)-6;
     return true;

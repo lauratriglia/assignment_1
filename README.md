@@ -3,6 +3,12 @@
 In this repository you will find all the package required for the construction of a 2D robot whose goal is to achieve a target. Let me explain all the 
 directory which are in this repository
 
+## Prerequisites 
+To run the code successfully you need to clone the following package:
+- https://github.com/CarmineD8/assignment1.git
+
+After that you need to do a catkin_make
+
 ### my_srv
 In this package you will find 
 - A subfolder /srv cointains Server1.srv -> it contains all the paramaters that the Server1 required and the parameters that are returned.
@@ -31,6 +37,6 @@ rosrun my_srv random_server
 ```
 - As last step, in another shell, use the command to run the robot_controller
 ```
-rosrun roboy robot_controller
+rosrun robot robot_controller
 ```
 
